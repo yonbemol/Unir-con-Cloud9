@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>Family</th>
+      <th>Subfamily</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.width %></td>
+        <td><%= product.height %></td>
+        <td><%= product.family %></td>
+        <td><%= product.subfamily %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1>Productos de Jimp o de Persona o Astroimagen wat</h1>
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3><%= product.name %></h3>
+        <h3>Precio: <%= product.price %></h3>
+        <%= link_to "Ver detalles del producto!", product, class: "btn btn-default" %>        
+      </div>
+    </div>    
+  </div>  
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to "Nuevo producto", new_product_path, class: "btn btn-default" %>
+Add Comment Collapse
+
+
+
+jlbeta [7:51 PM]  
+added this Ruby snippet: show 
+
+
+<%= link_to 'New Product', new_product_path %>
